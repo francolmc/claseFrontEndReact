@@ -16,6 +16,7 @@ import EditPost from './pages/myPosts/editPost';
 import NewPost from './pages/myPosts/newPost';
 
 function App() {
+  console.log(process.env.REACT_APP_BACKEND_SERVER_URL);
   return (
     <>
       <div className="show-fake-browser navbar-page">
