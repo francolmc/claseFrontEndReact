@@ -5,7 +5,6 @@ import 'rsuite/dist/rsuite.min.css';
 import PrincipalFooter from './components/footer/principalFooter';
 import { Container, Content, Footer, Header } from 'rsuite';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Sample from './pages/sample/sample';
 import LoginForm from './pages/login/loginForm';
 import HomePosts from './pages/home/homePosts';
 import ProtectedRoute from './components/router/ProtectedRoute';
@@ -33,7 +32,7 @@ function App() {
                 <Route path="/profile/change-password" element={<ChangePassword />} />
                 <Route path="/profile/edit" element={<EditProfile />} />
                 <Route path="/myposts" element={<MyPostsList />} />
-                <Route path="/myposts/{idPost}/edit" element={<EditPost />} />
+                <Route path="/myposts/:id/edit" element={<EditPost />} />
                 <Route path="/myposts/new" element={<NewPost />} />
                 <Route path="/logout" element={() => (<></>)} />
               </Routes>
