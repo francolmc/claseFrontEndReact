@@ -40,3 +40,9 @@
 .new-post-link {
   margin-bottom: 2%;
 }
+
+.likes-post {
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+}
