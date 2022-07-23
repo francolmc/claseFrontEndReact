@@ -1,12 +1,32 @@
 import { useState } from "react";
-import { Button, ButtonToolbar, FlexboxGrid, Form, Panel } from "rsuite";
+import { useNavigate } from "react-router-dom";
+import { Button, ButtonToolbar, FlexboxGrid, Form, Message, Panel } from "rsuite";
+import { ApiWithoutToken } from "../../config/api";
 
 const LoginForm = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [messageError, setMessageError] = useState('');
+    const navigate = useNavigate();
 
-    const login = () => {
-        console.log(userName, password);
+    const login = async () => {
+        await ApiWithoutToken.post('/api/user/login', {
+          "email": userName,
+          "password": password
+        }).then((response) => {
+          if (response.data) {
+            localStorage.setItem('access_token', response.data.access_token);
+            navigate('/');
+          } else {
+            setMessageError('User or password incorrect.');
+          }
+        }).catch((ex) => {
+          if (ex.code === 'ERR_BAD_REQUEST') {
+            setMessageError('User or password incorrect.');
+          } else {
+            setMessageError('Error with server.');
+          }
+        });
     }
 
     return (
@@ -28,6 +48,7 @@ const LoginForm = () => {
                   </ButtonToolbar>
                 </Form.Group>
               </Form>
+              {messageError && <Message className="login-error-message" type="error">{messageError}</Message>}
             </Panel>
           </FlexboxGrid.Item>
         </FlexboxGrid>

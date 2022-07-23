@@ -11,3 +11,14 @@
   padding-bottom: 10px;
   font-size: 11px;
 }
+
+.login-error-message {
+  margin-top: 5%;
+}
+
+.content-site {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
