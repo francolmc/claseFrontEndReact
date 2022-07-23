@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import { Nav, Navbar } from "rsuite";
 
 const HomeHeader = () => {
     return (
         <Navbar>
-            <Navbar.Brand href="#">Sitio Ejemplo</Navbar.Brand>
+            <Navbar.Brand href="/">Sitio Ejemplo</Navbar.Brand>
             <Nav>
-                <Nav.Item>Home</Nav.Item>
+                <Nav.Item><Link to="/">Home</Link></Nav.Item>
             </Nav>
         </Navbar>
     );

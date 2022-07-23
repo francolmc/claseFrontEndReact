@@ -1,15 +1,21 @@
+import { Link, useNavigate } from "react-router-dom";
 import { Nav, Navbar } from "rsuite";
 
 const HomeHeader = () => {
+    const navigate = useNavigate();
     return (
         <Navbar>
             <Navbar.Brand href="#">Sitio Ejemplo</Navbar.Brand>
             <Nav>
-                <Nav.Item>Home</Nav.Item>
+                <Link to="/" role='button' className="rs-navbar-item">Home</Link>
+                <Link to="/posts" role='button' className="rs-navbar-item">Posts</Link>
             </Nav>
             <Nav pullRight>
                 <Nav.Item>Perfil</Nav.Item>
-                <Nav.Item>Logout</Nav.Item>
+                <Nav.Item onClick={() => {
+                    localStorage.clear();
+                    navigate('/login');
+                }}>Logout</Nav.Item>
             </Nav>
         </Navbar>
     );
