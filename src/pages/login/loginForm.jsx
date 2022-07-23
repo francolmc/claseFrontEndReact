@@ -16,6 +16,7 @@ const LoginForm = () => {
         }).then((response) => {
           if (response.data) {
             localStorage.setItem('access_token', response.data.access_token);
+            localStorage.setItem('user', userName);
             navigate('/');
           } else {
             setMessageError('User or password incorrect.');
