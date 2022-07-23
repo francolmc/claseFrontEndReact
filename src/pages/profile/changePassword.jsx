@@ -8,7 +8,7 @@ const ChangePassword = () => {
     const [messageError, setMessageError] = useState('');
     const navigate = useNavigate();
 
-    const updateUser = async () => {
+    const changePassword = async () => {
         try {
             await ApiWithToken.put(`/api/user/changepassword`, {
                 newPassword
@@ -29,7 +29,7 @@ const ChangePassword = () => {
                 </Form.Group>
                 <Form.Group>
                     <ButtonToolbar>
-                    <Button appearance="primary" onClick={() => updateUser()}>Guardar perfil</Button>
+                    <Button appearance="primary" onClick={() => changePassword()}>Guardar perfil</Button>
                     </ButtonToolbar>
                 </Form.Group>
             </Form>

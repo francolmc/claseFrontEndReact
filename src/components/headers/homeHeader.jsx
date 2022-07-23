@@ -11,6 +11,7 @@ const HomeHeader = () => {
                 <Link to="/posts" role='button' className="rs-navbar-item">Posts</Link>
             </Nav>
             <Nav pullRight>
+                <Link to="/myposts" role='button' className="rs-navbar-item">Mis posts</Link>
                 <Link to="/profile" role='button' className="rs-navbar-item">Perfil</Link>
                 <Nav.Item onClick={() => {
                     localStorage.clear();
