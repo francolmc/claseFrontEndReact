@@ -16,7 +16,7 @@ const HomePosts = () => {
         <>
             <h3>Publicaciones realizadas</h3>
             {posts.map(item => (
-                <Panel header={item.title} key={item.id}>
+                <Panel header={item.title} key={item.id} className='post-list' shaded>
                     {item.content}
                 </Panel>
             ))}

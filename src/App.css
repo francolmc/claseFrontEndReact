@@ -26,3 +26,17 @@
 .forms-error-message {
   margin-top: 5%;
 }
+
+.post-list {
+  margin-bottom: 2%;
+}
+
+.post-button-group {
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+}
+
+.new-post-link {
+  margin-bottom: 2%;
+}
