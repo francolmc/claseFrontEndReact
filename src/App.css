@@ -1,0 +1,48 @@
+.login-form {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.footer {
+  text-align: center;
+  color: #575757;
+  background-color: #f7f7fa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 11px;
+}
+
+.login-error-message {
+  margin-top: 5%;
+}
+
+.content-site {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.forms-error-message {
+  margin-top: 5%;
+}
+
+.post-list {
+  margin-bottom: 2%;
+}
+
+.post-button-group {
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+}
+
+.new-post-link {
+  margin-bottom: 2%;
+}
+
+.likes-post {
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+}
