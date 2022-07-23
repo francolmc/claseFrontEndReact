@@ -15,6 +15,9 @@ import EditPost from './pages/myPosts/editPost';
 import NewPost from './pages/myPosts/newPost';
 import Home from './pages/home/home';
 import { ProtectedRoute } from './components/router/ProtectedRouter';
+import RegisterUser from './pages/register/registerUser';
+import SuccessRegister from './pages/register/successRegister';
+import LoginHeader from './components/headers/loginHeader';
 
 function App() {
   return (
@@ -23,20 +26,21 @@ function App() {
       <BrowserRouter>
           <Container>
             <Header>
-              <HomeHeader />
+              {localStorage.getItem('access_token') ? <HomeHeader /> : <LoginHeader />}
             </Header>
             <Content className='content-site'>
                 <Routes>
                   <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
                   <Route path="/posts" element={<ProtectedRoute><HomePosts /></ProtectedRoute>} />
                   <Route path="/login" element={<LoginForm />} />
+                  <Route path="/register" element={<RegisterUser />} />
+                  <Route path="/register/success" element={<SuccessRegister />} />
                   <Route path="/profile" element={<ProtectedRoute><ShowProfile /></ProtectedRoute>} />
-                  <Route path="/profile/change-password" element={<ChangePassword />} />
-                  <Route path="/profile/edit" element={<EditProfile />} />
-                  <Route path="/myposts" element={<MyPostsList />} />
-                  <Route path="/myposts/:id/edit" element={<EditPost />} />
-                  <Route path="/myposts/new" element={<NewPost />} />
-                  <Route path="/logout" element={() => (<></>)} />
+                  <Route path="/profile/change-password" element={<ProtectedRoute><ChangePassword /></ProtectedRoute>} />
+                  <Route path="/profile/edit" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
+                  <Route path="/myposts" element={<ProtectedRoute><MyPostsList /></ProtectedRoute>} />
+                  <Route path="/myposts/:id/edit" element={<ProtectedRoute><EditPost /></ProtectedRoute>} />
+                  <Route path="/myposts/new" element={<ProtectedRoute><NewPost /></ProtectedRoute>} />
                 </Routes>
             </Content>
             <Footer className='footer'>
