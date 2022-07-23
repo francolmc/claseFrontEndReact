@@ -30,7 +30,7 @@ function App() {
                   <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
                   <Route path="/posts" element={<ProtectedRoute><HomePosts /></ProtectedRoute>} />
                   <Route path="/login" element={<LoginForm />} />
-                  <Route path="/profile" element={<ShowProfile />} />
+                  <Route path="/profile" element={<ProtectedRoute><ShowProfile /></ProtectedRoute>} />
                   <Route path="/profile/change-password" element={<ChangePassword />} />
                   <Route path="/profile/edit" element={<EditProfile />} />
                   <Route path="/myposts" element={<MyPostsList />} />

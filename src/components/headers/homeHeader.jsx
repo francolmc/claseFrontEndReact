@@ -11,7 +11,7 @@ const HomeHeader = () => {
                 <Link to="/posts" role='button' className="rs-navbar-item">Posts</Link>
             </Nav>
             <Nav pullRight>
-                <Nav.Item>Perfil</Nav.Item>
+                <Link to="/profile" role='button' className="rs-navbar-item">Perfil</Link>
                 <Nav.Item onClick={() => {
                     localStorage.clear();
                     navigate('/login');
